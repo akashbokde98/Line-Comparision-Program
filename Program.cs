@@ -8,29 +8,50 @@ namespace LineComparision
         {
             Console.WriteLine("Welcome To Line Comparision Compustation Program!");
             Program obj = new Program();
-            double lenghtOfLine = obj.LengthofLine();
-            Console.WriteLine("Length of a Line = " + lenghtOfLine);
+            obj.CompareTwoLines();
         }
-        public double LengthofLine()
+        public void CompareTwoLines()
         {
-            Console.WriteLine("For Point 1");
+            Console.WriteLine("For Line1 Point 1");
             Console.WriteLine("Enter Value of X1-");
-            int x1 = int.Parse(Console.ReadLine());
+            double x1 = int.Parse(Console.ReadLine());
             Console.WriteLine("Enter Value of Y1-");
-            int y1 = int.Parse(Console.ReadLine());
+            double y1 = int.Parse(Console.ReadLine());
 
-            Console.WriteLine("For Point 2");
+            Console.WriteLine("For Line1 Point 2");
             Console.WriteLine("Enter Value of X2-");
-            int x2 = int.Parse(Console.ReadLine());
+            double x2 = int.Parse(Console.ReadLine());
             Console.WriteLine("Enter Value of Y2-");
-            int y2 = int.Parse(Console.ReadLine());
+            double y2 = int.Parse(Console.ReadLine());
+
+            Console.WriteLine("For Line 2 Point 1");
+            Console.WriteLine("Enter Value of X3-");
+            double x3 = int.Parse(Console.ReadLine());
+            Console.WriteLine("Enter Value of Y3-");
+            double y3 = int.Parse(Console.ReadLine());
+
+            Console.WriteLine("For Line 2 Point 2");
+            Console.WriteLine("Enter Value of X4-");
+            double x4 = int.Parse(Console.ReadLine());
+            Console.WriteLine("Enter Value of Y4-");
+            double y4 = int.Parse(Console.ReadLine());
 
             double v1 = Math.Pow((x2 - x1), 2);
             double v2 = Math.Pow((y2 - y1), 2);
+            double v3 = Math.Pow((x4 - x3), 2);
+            double v4 = Math.Pow((y4 - y3), 2);
 
-            double length = Math.Sqrt(v1 + v2);
+            double length1 = Math.Sqrt(v1 + v2);
+            double length2 = Math.Sqrt(v3 + v4);
 
-            return length;
+            if (length1.Equals(length2))
+            {
+                Console.WriteLine("Line1 and Line2 are Equal and Preferable.");
+            }
+            else
+            {
+                Console.WriteLine("Line1 and Line2 are Not Equal.");
+            }
         }
     }
 }
