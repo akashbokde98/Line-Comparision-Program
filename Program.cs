@@ -44,17 +44,19 @@ namespace LineComparision
             double length1 = Math.Sqrt(v1 + v2);
             double length2 = Math.Sqrt(v3 + v4);
 
-            if (length1.Equals(length2))
+            int status = length1.CompareTo(length2);
+
+            if (status > 0)
             {
-                Console.WriteLine("Line1 and Line2 are Equal and Preferable.");
+                Console.WriteLine("Line1 is Greater than Line2");
             }
-            else if (length1 > length2)
+            else if (status < 0)
             {
-                Console.WriteLine("line1 is Greater than line2");
+                Console.WriteLine("line2 is Greater than line1");
             }
             else
             {
-                Console.WriteLine("Line1 is less than and Not Equal to Line2.");
+                Console.WriteLine("Line1 and Line2 are Equal");
             }
         }
     }
